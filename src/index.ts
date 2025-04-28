@@ -1,9 +1,8 @@
-import express, { json } from "express";
-import { UserModel } from "./db";
+import express from "express";
+import { ContentModel, UserModel } from "./db";
 import jwt from "jsonwebtoken";
-
-const JWT_PASSWORD  = ""
-
+import {JWT_PASSWORD} from "./config"
+import { userMiddleware } from "./middleware";
 
 const app  = express();
 app.use(express.json())
@@ -28,12 +27,9 @@ app.use(express.json())
         res.status(411).json({
             message:"user already exixt"
         })
-
        }
-
-
     })
-    app.post("/api/v1/signin",async (req,res) =>{
+    app.post("/api/v1/signin",userMiddleware,async (req,res) =>{
 
         const username = req.body.username;
         const password = req.body.password;
@@ -55,18 +51,19 @@ app.use(express.json())
                 message: "incorrect Credentials"
             })
         }
-
-        try{
-
-
-        }catch(e){
-
-        }
-
-
     })
+
+
     app.post("/api/v1/content",(req,res) =>{
 
+        const link =  req.body.link;
+        const type  =  req.body.type;
+        ContentModel.create({
+            type,
+            link,
+            //@ts-ignore
+            userId: req.userId
+        })
 
     })
 
