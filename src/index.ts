@@ -1,5 +1,9 @@
-import express from "express";
+import express, { json } from "express";
 import { UserModel } from "./db";
+import jwt from "jsonwebtoken";
+
+const JWT_PASSWORD = "!123123"
+
 
 const app  = express();
 app.use(express.json())
@@ -29,7 +33,35 @@ app.use(express.json())
 
 
     })
-    app.post("/api/v1/signin",(req,res) =>{
+    app.post("/api/v1/signin",async (req,res) =>{
+
+        const username = req.body.username;
+        const password = req.body.password;
+        const exixtingUser = await UserModel.findOne({
+            username,
+            password
+        })
+
+        if(exixtingUser){
+            const token = jwt.sign({
+                id: exixtingUser._id
+            }, JWT_PASSWORD)
+
+            res.json({
+                token
+            })
+        }else{
+            res.status(403).json({
+                message: "incorrect Credentials"
+            })
+        }
+
+        try{
+
+
+        }catch(e){
+
+        }
 
 
     })
