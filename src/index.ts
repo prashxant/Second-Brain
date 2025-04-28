@@ -2,7 +2,7 @@ import express, { json } from "express";
 import { UserModel } from "./db";
 import jwt from "jsonwebtoken";
 
-const JWT_PASSWORD = "!123123"
+const JWT_PASSWORD  = ""
 
 
 const app  = express();
