@@ -1,8 +1,31 @@
 import express from "express";
+import { UserModel } from "./db";
 
 const app  = express();
+app.use(express.json())
 
-    app.post("/api/v1/signup",(req,res) =>{
+    app.post("/api/v1/signup", async (req, res) => {
+        //zod validation,hasing the password //
+        const username = req.body.username;
+        const password = req.body.password;
+
+       try{
+        
+       await UserModel.create({
+            username: username,
+            password: password
+        })
+
+        res.json({
+            message: "you are signed in"
+        })
+       }catch(e){
+
+        res.status(411).json({
+            message:"user already exixt"
+        })
+
+       }
 
 
     })
@@ -35,3 +58,4 @@ const app  = express();
 
     })
 
+    app.listen(3000);
