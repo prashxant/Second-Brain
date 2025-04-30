@@ -1,9 +1,9 @@
  
 
-type Variants  =  "primary" | "secondary"; 
+
 
 export interface ButtonProps {
-    variant: Variants;
+    variant: "primary" | "secondary" ;
     size: "sm"| "md" | "lg";
     text: string;
     startIcon?: any;
@@ -29,7 +29,8 @@ export const Button = (props: ButtonProps) => {
 
     
     return <button className={`${variantStyles[props.variant]} ${defaultStyle} ${sizeStyles[props.size]}`}>
-        {props.startIcon ?  <div className="pr-2">{props.startIcon}</div> : null} {props.text} {props.endIcon}
+        {props.startIcon ?  <div className="pr-2">{props.startIcon}</div> : null} {props.text} 
+        {props.endIcon ? <div className="px-2"> {props.endIcon} </div> : null}
         </button>
 
 }
