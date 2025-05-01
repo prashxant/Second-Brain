@@ -1,16 +1,15 @@
-import { Button } from "./comonents/button"
+import {  Button } from "./comonents/Button"
 import { PlusIcon } from "./icons/PlusIcon"
-import { ShareIcon } from "./icons/Share"
-
-
+import { Share } from "./icons/Share"
 function App() {
 
   return (
     <>
-    <Button size = "sm" variant="primary" text="button" startIcon={<PlusIcon size="lg"/>} endIcon={<ShareIcon size="lg"/>} onClick={()=>{alert("gg") }}></Button>
-    <Button size = "md" variant="secondary" text="button"  onClick={()=>{alert("gg") }}></Button>
-    <Button size = "lg" variant="primary" text="button"  onClick={()=>{alert("gg") }}></Button>
-    </>
+    <div className="">
+      <Button variant="primary" text="Add contents" startIcon={<PlusIcon/>}/>
+      <Button variant="secondary" text="Share Brain" startIcon={<Share/>}/>
+    </div>
+   </>
   )
 }
 

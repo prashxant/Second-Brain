@@ -1,37 +1,31 @@
- 
+import { ReactElement } from "react";
 
 
-
-export interface ButtonProps {
-    variant: "primary" | "secondary" ;
-    size: "sm"| "md" | "lg";
-    text: string;
-    startIcon?: any;
-    endIcon?: any;
-    onClick: () => void
-
-} 
-
-const sizeStyles = {
-    "sm": "py-1 px-2",
-    "md": "py-2 px-4",
-    "lg": "py-4 px-6"
+interface buttonProps{
+    variant: "primary" | "secondary";
+    text: String;
+    startIcon: ReactElement;
 }
-
- const defaultStyle = "cursor-pointer rounded-md p-4 flex"
 
 const variantStyles = {
-    "primary" : "bg-purple-2 text-white ",
-    "secondary": "bg-purple-1 text-purple-3"
+
+    "primary": "bg-purple-1 text-white",
+    "secondary": "bg-purple-2 text-purple-1"
 }
 
-export const Button = (props: ButtonProps) => {
+const defaultStyles = " rounded-md py-2 px-4 font-light flex items-center"
 
-    
-    return <button className={`${variantStyles[props.variant]} ${defaultStyle} ${sizeStyles[props.size]}`}>
-        {props.startIcon ?  <div className="pr-2">{props.startIcon}</div> : null} {props.text} 
-        {props.endIcon ? <div className="px-2"> {props.endIcon} </div> : null}
+
+
+
+
+export function Button (props: buttonProps){
+
+    return <button className={`${defaultStyles} ${variantStyles[props.variant]} `}>
+       <div className="pr-2">
+       {props.startIcon}
+       </div>
+        {props.text}
         </button>
 
 }
-
