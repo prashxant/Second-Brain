@@ -18,7 +18,7 @@ const sizeStyles = {
     "lg": "py-4 px-6"
 }
 
- const defaultStyle = "rounded-md p-4 flex"
+ const defaultStyle = "cursor-pointer rounded-md p-4 flex"
 
 const variantStyles = {
     "primary" : "bg-purple-2 text-white ",
