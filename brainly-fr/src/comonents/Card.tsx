@@ -32,10 +32,10 @@ export function Card({title,link,type}: cardProps) {
         <div className="pt-4">
 
         {type === "twitter" && <blockquote className="twitter-tweet">
-            <a href="https://twitter.com/username/status/807811447862468608"></a> 
+            <a href={link.replace("twitter.com","x.com")}></a> 
             </blockquote> }
-             
-        {type === "youtube" &&  <iframe className="w-full" src="https://www.youtube.com/embed/gXQrci3Wff8?si=nVxsnYsZnMsEokax" 
+
+        {type === "youtube" &&  <iframe className="w-full" src={link.replace("watch","embed")} 
                title="YouTube video player"  allow="accelerometer;autoplay; 
                clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                 referrerPolicy="strict-origin-when-cross-origin" allowFullScreen></iframe> }
