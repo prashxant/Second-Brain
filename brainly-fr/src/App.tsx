@@ -10,7 +10,7 @@ function App() {
       <Button variant="primary" text="Add contents" startIcon={<PlusIcon/>}/>
       <Button variant="secondary" text="Share Brain" startIcon={<Share/>}/>
       <br />
-      <Card/>
+      <Card type="twitter" title="trying" link="https://github.com/prashxant/"/>
     </div>
    </>
   )
