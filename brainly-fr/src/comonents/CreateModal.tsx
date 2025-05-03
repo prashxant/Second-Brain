@@ -1,5 +1,4 @@
 import { CrossIcon } from "../icons/CrossIcon";
-import { Share } from "../icons/Share";
 
 //controlled component
 export function CreateModal({ open, onclose }) {
