@@ -2,19 +2,24 @@ import { Button } from "./comonents/Button";
 import { PlusIcon } from "./icons/PlusIcon";
 import { Share } from "./icons/Share";
 import { Card } from "./comonents/Card";
-import { CreateModal } from "./comonents/createModal";
+import { useState } from "react";
+import { CreateModal } from "./comonents/CreateModal";
 function App() {
+    const [modalOpen,setModaOpen] = useState(true)
   return (
-    <div className="">
-      <CreateModal open={true} />
+    <div>
+      <CreateModal open={modalOpen}  onclose={()=>{
+        setModaOpen(false)
+      }}/>
 
-      <div className="flex justify-end gap-4">
+      <div className="flex justify-end gap-4 ">
         <Button
           variant="primary"
           text="Add contents"
           startIcon={<PlusIcon />}
+          onClick={()=>{setModaOpen(true)}}
         />
-        <Button variant="secondary" text="Share Brain" startIcon={<Share />} />
+        <Button variant="secondary" text="Share Brain" startIcon={<Share />} onClick={()=>{alert("hi i am working")}} />
       </div>
       <div className="flex">
         <Card
@@ -24,7 +29,7 @@ function App() {
         />
         <Card
           type="youtube"
-          title="trying"
+          title="Akita"
           link="https://www.youtube.com/watch?v=ItLFpYha6Wc"
         />
       </div>

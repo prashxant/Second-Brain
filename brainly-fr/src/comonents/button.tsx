@@ -4,7 +4,8 @@ import { ReactElement } from "react";
 interface buttonProps{
     variant: "primary" | "secondary";
     text: String;
-    startIcon: ReactElement;
+    startIcon?: ReactElement;
+    onClick?: ()=> void
 }
 
 const variantStyles = {
@@ -19,13 +20,13 @@ const defaultStyles = " rounded-md py-2 px-4 font-light flex items-center"
 
 
 
-export function Button (props: buttonProps){
+export function Button ({variant,text,startIcon,onClick}: buttonProps){
 
-    return <button className={`${defaultStyles} ${variantStyles[props.variant]} `}>
+    return <button onClick={onClick} className={`${defaultStyles} ${variantStyles[variant]} `}>
        <div className="pr-2">
-       {props.startIcon}
+       {startIcon}
        </div>
-        {props.text}
+        {text}
         </button>
 
 }
