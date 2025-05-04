@@ -4,10 +4,14 @@ import { Share } from "./icons/Share";
 import { Card } from "./comonents/Card";
 import { useState } from "react";
 import { CreateModal } from "./comonents/CreateModal";
+import { Sidebar } from "./comonents/Sidebar";
 function App() {
     const [modalOpen,setModaOpen] = useState(true)
-  return (
-    <div>
+  return (<div className="">
+ 
+      <Sidebar/>
+   
+    <div className="p-4 ml-72 h-min-screen  bg-slate-100" >
       <CreateModal open={modalOpen}  onclose={()=>{
         setModaOpen(false)
       }}/>
@@ -33,6 +37,7 @@ function App() {
           link="https://www.youtube.com/watch?v=ItLFpYha6Wc"
         />
       </div>
+    </div>
     </div>
   );
 }
