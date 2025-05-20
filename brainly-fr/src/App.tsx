@@ -6,7 +6,7 @@ import { useState } from "react";
 import { CreateModal } from "./comonents/CreateModal";
 import { Sidebar } from "./comonents/Sidebar";
 function App() {
-    const [modalOpen,setModaOpen] = useState(true)
+    const [modalOpen,setModaOpen] = useState(false)
   return (<div className="">
  
       <Sidebar/>

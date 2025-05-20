@@ -1,8 +1,9 @@
 import { CrossIcon } from "../icons/CrossIcon";
 import { Button } from "./Button";
 
+
 //controlled component
-export function CreateModal({ open, onclose }) {
+export function CreateModal({ open, onclose } : any ) {
   return (
     <div>
       {open && (
