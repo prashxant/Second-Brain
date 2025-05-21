@@ -6,6 +6,7 @@ function App() {
     <div>
       <Signup/> 
       <Dashboard/>
+      <h1><h2><h3>git</h3></h2></h1>
     </div>
   )
 }
