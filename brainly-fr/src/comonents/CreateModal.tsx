@@ -1,5 +1,7 @@
 import { CrossIcon } from "../icons/CrossIcon";
 import { Button } from "./Button";
+import { Input } from "./Input";
+
 
 
 //controlled component
@@ -17,8 +19,8 @@ export function CreateModal({ open, onclose } : any ) {
                         </div>
                     </div>
                     <div>
-                        <Input placeholder={"Title"}/>
-                        <Input placeholder={"Link"}/>
+                        <Input onChange={()=>{}} placeholder={"Title"}/>
+                        <Input onChange={()=>{}} placeholder={"Link"}/>
                         <div className="flex justify-center">
                         <Button variant="primary" text={"Submit"}/>
                         </div>
@@ -32,10 +34,3 @@ export function CreateModal({ open, onclose } : any ) {
 }
 
 
-function Input ({onChange,placeholder}: {onChange: ()=> void} ){
-  return (
-    <div>
-      <input type="text" placeholder={placeholder} className="px-4 py-2 border rounded m-2" onChange={onChange} />
-    </div>
-  )
-}
