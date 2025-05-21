@@ -1,6 +1,8 @@
 import { useRef } from "react";
 import { Button } from "../comonents/Button"
 import { Input } from "../comonents/Input"
+import { BACKEND_URL } from "../config";
+import axios from "axios";
 
 
 function Signup() {
@@ -9,9 +11,17 @@ function Signup() {
  const passwordRef =  useRef<HTMLInputElement>(null);
 
   
-function signup(){
+ async function signup(){
  const username = usernameRef.current?.value;
- const Password = passwordRef.current?.value;
+ const password = passwordRef.current?.value;
+  await axios.post(BACKEND_URL+ "/api/v1/signup", {
+    data:{
+      username,
+      password 
+    }
+ })
+ alert("you have signed up! ")
+
 }
   return (
     <div className="h-screen w-screen bg-grey-200 flex justify-center items-center ">
