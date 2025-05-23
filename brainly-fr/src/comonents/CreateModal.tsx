@@ -1,4 +1,4 @@
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import { CrossIcon } from "../icons/CrossIcon";
 import { Button } from "./Button";
 import { Input } from "./Input";
@@ -10,6 +10,7 @@ export function CreateModal({ open, onclose } ) {
 
     const titleRef = useRef<HTMLInputElement>(null);
     const linkRef = useRef<HTMLInputElement>(null);
+    const [type,setType] = useState("youtube")
 
   function addContents(){
       const title = titleRef.current?.value
