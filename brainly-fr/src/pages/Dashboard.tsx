@@ -11,7 +11,7 @@ function Dashboard () {
  
       <Sidebar/>
    
-    <div className="p-4 ml-72 h-min-screen  bg-slate-100" >
+    <div className="p-4 ml-72 h-min-screen " >
       <CreateModal open={modalOpen}  onclose={()=>{
         setModaOpen(false)
       }}/>
@@ -23,17 +23,17 @@ function Dashboard () {
           startIcon={<PlusIcon />}
           onClick={()=>{setModaOpen(true)}}
         />
-        <Button variant="secondary" text="Share Brain" startIcon={<Share />} onClick={()=>{alert("hi i am working")}} />
+        <Button variant="secondary" text="Share Brain" startIcon={<Share />}  />
       </div>
       <div className="flex">
         <Card
           type="twitter"
-          title="trying"
+          title=""
           link="https://x.com/arpit_bhayani/status/1918267700335489238#"
         />
         <Card
           type="youtube"
-          title="Akita"
+          title=""
           link="https://www.youtube.com/watch?v=ItLFpYha6Wc"
         />
       </div>
