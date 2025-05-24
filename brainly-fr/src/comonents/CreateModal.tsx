@@ -32,7 +32,7 @@ export function CreateModal({ open, onclose } ) {
                         <Input reference={titleRef} placeholder={"Title"}/>
                         <Input reference={linkRef} placeholder={"Link"}/>
                         <div className="flex justify-center">
-                        <Button onClick={addContents} variant="primary" text={"Submit"}/>
+                        <Button onClick={addContents} variant="primary" text={"Submitd"}/>
                         </div>
                     </div>
                 </span>
